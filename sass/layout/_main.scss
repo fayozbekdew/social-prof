@@ -1,0 +1,179 @@
+main{
+    flex-grow: 1;
+}
+.bacround{
+    background: url(../../images/top-bac.svg), url(../../images/bottom-bac.svg);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom ;
+}
+.hero {
+    // background-color: $bac-color;
+    padding-top: 11.8rem;
+    padding-bottom: 5rem;
+}
+.hero-container {
+    @include center;
+    justify-content: space-between;
+    @include responsive (mobile){
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.hero__info {
+    padding-right: 2rem;
+
+    &__text {
+        max-width: 44.5rem;
+        @include font ($font-weight-semiBold, $text-middle-size, $text-middle-line);
+        color: $text-color;
+        @include responsive (mobile){
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__title {
+        max-width: 44.5rem;
+        @include font ($font-weight-bold, $tittle-middle-size, $tittle-middle-line);
+        color: $primary-color;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.hero__result {
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(445px, 1fr));
+    place-items: center;
+    row-gap: 1.6rem;
+    &__card {
+        height: 5.6rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        border-radius: .8rem;
+        @include center;
+        background-color: $result-color;
+        @include responsive (mobile){
+            max-width: 25rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            }
+        &__list{
+        @include center;
+        margin-right: 3.2rem;
+        @include responsive (mobile){
+        margin-bottom: 1.1rem;
+        align-items: center;
+        justify-content: center;
+        }
+        }
+        &__item{
+            &:not(:last-child){
+                margin-right: 0.8rem;
+            }
+        }
+        &__title{
+        @include font ($font-weight-bold, $tittle-normal-size, $tittle-normal-line);
+        color: $primary-color;
+        }
+    }
+}
+
+.card-1 {
+grid-column: 1 / 8;
+@include responsive (tabletmin){
+    grid-column: 1 / 8;
+}
+}
+
+.card-2 {
+grid-column: 2 / 10;
+@include responsive (tabletmin){
+    grid-column: 1 / 8;
+}
+}
+
+.card-3 {
+grid-column:  4 / 12;
+@include responsive (tabletmin){
+    grid-column: 1 / 8;
+}
+}
+
+// FEATURES-SECTIUON
+
+.features {
+// background-color: $bac-color;
+padding-bottom: 10rem;
+}
+
+.features-container {
+    
+}
+.features__cards {
+    column-gap:3rem;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(autofit, minmax(350px, 1fr));
+    grid-template-rows: repeat(autofit, minmax(234px, 1fr));
+    @include responsive(tabletmin){
+        column-gap: 1rem;
+    }
+    @include responsive (mobile){
+        row-gap: 1.6rem;
+    }
+    &__card{
+    border-radius: .8rem;
+    background-color: $primary-color;
+    padding: 4rem 3.2rem 3.5rem 3.2rem;
+        &__user{
+        @include center;
+        column-gap:2.3rem;
+        margin-bottom: 3.2rem;
+            &__img{
+            border-radius: 50%;
+            }
+            &__info{
+    
+                &__name{
+                @include font($font-weight-bold, $tittle-normal-size, $tittle-normal-line);
+                color: $white-color;
+                margin-bottom: 0.4rem;
+                }
+                &__job{
+                    @include font($font-weight-regular, $tittle-normal-size, $tittle-normal-line);
+                    color: $tittle-color;
+                }
+            }
+        }
+        &__text{
+            max-width: 28.6rem;
+            @include font ($font-weight-semiBold, $text-normal-size, $text-normal-line);
+            color: $white-color;
+        }
+    }
+}
+.cards-1 {
+grid-row: 1 / 15 ;
+grid-column: 1 / 3;
+@include responsive (mobile){
+grid-column: 1 / 3 ;
+grid-row: 1 / 3;
+}
+}
+.cards-2 {
+grid-column: 3 / 6;
+grid-row: 2 / 16;
+@include responsive (mobile){
+    grid-column: 1 / 3 ;
+    grid-row: 3 / 6;
+    }
+}
+.cards-3 {
+grid-column: 6 / 9;
+grid-row: 3 / 17;
+@include responsive (mobile){
+    grid-column: 1 / 3 ;
+    grid-row: 6 / 9;
+    }
+}

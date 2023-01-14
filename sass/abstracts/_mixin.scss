@@ -1,0 +1,45 @@
+@mixin center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin font ($weight, $size, $line) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin mode($color) {
+    @if $color == black {
+        background-color: black;
+        color: #fff;
+    }
+    @else{
+        background-color: #fff;
+        color: black;
+    }
+    
+}
+
+@mixin responsive ($size) {
+    @if $size == tablet {
+        @media screen and (max-width:820px) {
+            @content;
+        }
+    }
+    @else if $size == tabletmin {
+        @media screen and (max-width:750px) {
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media screen and (max-width:580px) {
+            @content;
+        }
+    }
+    @else if $size == mobile2 {
+        @media screen and (max-width:390px) {
+            @content
+        }
+    }
+}
